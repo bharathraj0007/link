@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent Link Tracker</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header><div class="brand">Consent Link Tracker</div><span class="tag">LOCAL MVP</span></header>
+<main class="wrap">
+<section class="hero">
+<p class="eyebrow">CONSENT-FIRST LOCATION SHARING</p>
+<h1>Share a location.<br><span>Only with permission.</span></h1>
+<p class="muted">Create a one-hour link. The recipient must open it, choose “Start sharing,” and approve the browser's location prompt. No silent tracking.</p>
+<button id="createBtn">Create sharing link</button><p id="message" class="message" role="status"></p>
+</section>
+<section id="sessionPanel" class="panel hidden">
+<div class="panel-head"><div><p class="eyebrow">YOUR SESSION</p><h2>Share link created</h2></div><span class="status"><i></i> Expires in 1 hour</span></div>
+<label for="shareUrl">Recipient link</label><div class="copyrow"><input id="shareUrl" readonly><button class="secondary" id="copyBtn">Copy link</button></div>
+<p class="small muted">For local testing, open the link in another tab on this computer. For another device, use a trusted HTTPS development tunnel; browser geolocation is generally blocked on plain HTTP LAN addresses.</p>
+<div class="mapwrap"><div id="map"></div><div id="mapEmpty" class="mapempty">Waiting for the recipient to opt in…</div></div>
+<div class="metrics">
+<div><span class="metric-label">Sharing status</span><strong id="sharingStatus">Waiting for consent</strong></div>
+<div><span class="metric-label">Coordinates</span><strong id="coordinates">—</strong></div>
+<div><span class="metric-label">Accuracy</span><strong id="accuracy">—</strong></div>
+<div><span class="metric-label">Last update</span><strong id="updated">—</strong></div>
+</div>
+<button id="revokeBtn" class="danger">Revoke link and clear location</button>
+</section>
+<section class="note"><strong>Privacy by design</strong><p>Coordinates are held in server memory only, not saved to a database, and disappear when the server stops or the session expires. The recipient must choose to share. Keep the owner dashboard private.</p></section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="/static/app.js"></script>
+</body></html>

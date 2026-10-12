@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Share my location — Consent Link Tracker</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><div class="brand">Consent Link Tracker</div><span class="tag">RECIPIENT PAGE</span></header>
+<main class="wrap" style="max-width:650px">
+<section class="hero"><p class="eyebrow">YOU ARE IN CONTROL</p><h1>Share your location<br><span>if you choose.</span></h1>
+<p class="muted">This page does not send your location until you press “Start sharing” and approve your browser's location permission. You can stop at any time.</p></section>
+<section class="panel"><div class="consentbox"><strong>What will be shared?</strong>
+<ul><li>Your device's current latitude and longitude</li><li>Estimated location accuracy and update time</li><li>Updates while this page remains open and sharing is active</li></ul>
+<p class="small muted">The person who created the link can view these details. This session expires after one hour.</p></div>
+<button id="startBtn">Start sharing my location</button><button id="stopBtn" class="secondary hidden">Stop sharing</button>
+<p id="status" class="message" role="status">Not sharing. No location has been sent.</p><p id="coords" class="small muted"></p></section>
+</main><script src="/static/share.js"></script></body></html>
